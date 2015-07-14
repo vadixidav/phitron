@@ -45,6 +45,9 @@ namespace phi {
     
     //Lorentz force between two particles
     void lorentz(double coefficient, P3 &a, P3 &b);
+    
+    //Hooke's law with equilibrium point (always use posititve equilibrium
+    void spring(double coefficient, double equilibrium, P3 &a, P3 &b);
 }
 
 #endif // P3_H

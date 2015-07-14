@@ -46,6 +46,9 @@ namespace phi {
     
     //Gravitational force
     void attract(double coefficient, P2 &a, P2 &b);
+    
+    //Hooke's law with equilibrium point (always use posititve equilibrium
+    void spring(double coefficient, double equilibrium, P2 &a, P2 &b);
 }
 
 #endif // P2_H

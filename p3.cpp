@@ -25,5 +25,15 @@ namespace phi {
         b.acceleration += secondcross;
         a.acceleration -= secondcross;
     }
+    
+    void spring(double coefficient, double equilibrium, P3 &a, P3 &b) {
+        V3 delta = b.position;
+        delta -= a.position;
+        double k = coefficient * (delta.magnitude() - equilibrium);
+        delta.normalize();
+        delta *= k;
+        a.acceleration += delta;
+        b.acceleration -= delta;
+    }
 }
 
