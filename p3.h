@@ -36,18 +36,21 @@ namespace phi {
             acceleration -= force;
         }
         
+        //Gravitation around a location
+        void gravitate(double coefficient, const V3 &location, double radiusSquared = 0.0);
+        
         //Lorentz force
         void lorentz(const V3 &field);
     };
     
     //Gravitational force
-    void attract(double coefficient, P3 &a, P3 &b);
+    void attract(double coefficient, P3 &a, P3 &b, double radiusSquared = 0.0);
     
     //Lorentz force between two particles
     void lorentz(double coefficient, P3 &a, P3 &b);
     
     //Hooke's law with equilibrium point (always use posititve equilibrium
-    void spring(double coefficient, double equilibrium, P3 &a, P3 &b);
+    void spring(double coefficient, double equilibrium, P3 &a, P3 &b, double radiusSquared = 0.0);
 }
 
 #endif // P3_H

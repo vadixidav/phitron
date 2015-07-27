@@ -42,10 +42,13 @@ namespace phi {
             force *= coefficient;
             acceleration += force;
         }
+        
+        //Gravitation around a location
+        void gravitate(double coefficient, const V2 &location, double radiusSquared = 0.0);
     };
     
     //Gravitational force
-    void attract(double coefficient, P2 &a, P2 &b);
+    void attract(double coefficient, P2 &a, P2 &b, double radiusSquared = 0.0);
     
     //Hooke's law with equilibrium point (always use posititve equilibrium
     void spring(double coefficient, double equilibrium, P2 &a, P2 &b);
