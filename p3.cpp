@@ -16,6 +16,15 @@ namespace phi {
             delta *= coefficient / pow(distance, 1.5);
         acceleration += delta;
     }
+    
+    void P3::spring(double coefficient, double equilibrium, const V3 &location) {
+        V3 delta = location;
+        delta -= position;
+        double k = coefficient * (delta.magnitude() - equilibrium);
+        delta.normalize();
+        delta *= k;
+        acceleration += delta;
+    }
 
     void attract(double coefficient, P3 &a, P3 &b, double radiusSquared) {
         V3 delta = b.position;
